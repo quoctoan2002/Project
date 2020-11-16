@@ -1,0 +1,50 @@
+/* css ap dung cho ngay thu 2 */
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: cyan;
+}
+p{
+     margin-bottom: 1em;
+}
+
+li{
+    padding: 2em;
+}
+
+h1{
+    text-shadow: 3px 3px 3px cyan;
+    color: peru;
+    text-indent: 2rem;
+}
+
+/* dinh nghia class selector cho phan the khoi div */
+.hau{
+    width: 60%;
+    margin: auto;
+}
+
+/* dinh nghia id selector */
+#tam{
+   font-style: italic;
+   text-align: justify;
+}
+
+a:hover{
+    background-color: rgb(224, 44, 44);
+    color: rgb(177, 243, 44);
+}
+
+a:link{
+    color: blue;
+}
+
+a:visited{
+    color: rgb(39, 179, 39);
+}
+
+p::first-letter{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px  grey;
+}

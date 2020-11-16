@@ -1,0 +1,54 @@
+
+
+.logo{
+    width: 100px;
+    padding: 5px;
+}
+
+header{
+    background-color: black;
+    color: burlywood;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2rem;
+    position: relative;
+}
+
+header>span{
+    padding-left: 2rem;
+    position: absolute;
+    top: 30%;
+}
+
+nav{
+
+    margin-top: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 5px;
+    font-size: 1.15em;
+    text-align: center;
+    }
+
+nav>a{
+    padding: 10px;
+    text-decoration: none;
+}
+
+nav>a:hover{
+    background-color: coral;
+    color: wheat;
+}
+footer{
+    text-align: center;
+    font-size: 1.1em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+section{
+    position: relative;
+}
+.main{
+    width: 80%;
+    border: solid thin brown;
+    padding: 5px;
+    margin: auto;
+}

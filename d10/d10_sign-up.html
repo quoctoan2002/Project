@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <link rel="stylesheet" href="../css/d10.css">
+</head>
+
+<body>
+    <div>
+        <h2>Sign-up</h2>
+        <br>
+        <form action="d10_login.html" id="formReg" name="formReg">
+            <label for="">email</label>
+            <input type="email" name="mail" id="mail" required value="admin@gmail.com">
+            <br><br>
+
+            <label for="">password</label>
+            <input type="password" name="password" id="password" value="123" required>
+            <br><br>
+
+            <label for="">password-confirm</label>
+            <input type="password" name="password2" id="password2" value="123" required>
+            <br><br>
+
+            <input type="submit" value="submit">
+            <input type="reset" value="reset">
+
+
+        </form>
+
+    </div>
+
+    <script>
+        //lap trinh cho su kien submit cua form dang ky [formReg]
+        document.getElementById("formReg").onsubmit = function () {
+            //lay du lieu nhap trong o mail
+            var mail = document.getElementById("mail").value;
+
+            //kiem tra email co dung dinh dang xx[xxx]@x[xxx].com
+            var re = /^\w{2,}@\w+\.com$/
+            if (re.test(mail) == false) {
+                alert("email khong hop le. Vui long nhap lai !");
+                document.getElementById("mail").focus();
+                return false;
+            }
+
+            //lay du lieu nhap trong o password
+            var pass1 = document.getElementById("password").value.trim();
+
+            //kiem tra pass word phai co 3 ky tu bat ki
+            if (pass1.length < 3) {
+                alert("password phai nhieu hon 3 ky tu !");
+                document.getElementById("password").focus();
+                return false;
+            }
+
+            //lay du lieu nhap trong o password-confirm
+            var pass2 = document.getElementById("password2").value.trim();
+
+            //kiem tra password-confirm phai co 3 ky tu bat ki
+            if (pass2.length < 3) {
+                alert("password-confirm phai nhieu hon 3 ky tu !");
+                document.getElementById("password2").focus();
+                return false;
+            }
+
+            //kiem tra pass1 co giong pass2 ko
+            if (pass1 !== pass2) {
+                alert("password va password-confirm khac nhau !!!\nVui long nhap lai !");
+                document.getElementById("password2").focus();
+                return false;
+            }
+
+            //luu tai khoan dang ky vo localstorage
+            localStorage.setItem("mail", mail);
+            localStorage.setItem("password", pass1);
+
+            var s = ["<h2>Thong tin ca nhan </h2>"];
+            s.push("<hr>");
+            s.push(`<p>Email: ${mail} </p>`);
+            s.push(`<p>Password: ${pass1} </p>`);
+            s.push(`<link rel="stylesheet" href="../css/d10.css">`)
+            //open new tab trong browser
+            var newtab = window.open();
+            newtab.document.write(s.join(" "));
+        }
+    </script>
+</body>
+
+</html>

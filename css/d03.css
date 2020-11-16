@@ -1,0 +1,46 @@
+/* tao class selector 'tam'*/
+.tam{
+    padding: 3em;
+    margin: 4em;
+    color: peru;
+    background-color: blanchedalmond; 
+    border-top-color: tomato;
+    border-bottom-color: yellow;
+    border-left-color: lawngreen;
+    border-right-color: lightseagreen;
+
+    border-top-style: groove;
+    border-bottom-style: double;
+    border-right-style: dotted;
+    border-left-style: dashed;
+
+    border-top-width: thick;
+    border-bottom-width: medium;
+    border-right-style: thin;
+    border-left-style: 0.2em;
+}
+
+.hau{
+    margin: 4em;
+    color: blue;
+    background-color: lightcyan;
+    border-color: lightseagreen red ;
+    border-style: groove dashed;
+    border-width: medium;
+}
+
+.kien{
+    padding: 3em;
+    color: pink;
+    background-color: black;
+    border: yellow inset thick;
+}
+
+p{
+    text-align: justify;
+}
+
+.small-pic {
+    width: 30%;
+    padding: 5px;
+}

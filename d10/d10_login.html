@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up</title>
+    <link rel="stylesheet" href="../css/d10.css">
+</head>
+
+<body>
+    <div>
+        <h2>Log-in </h2>
+        <br>
+        <form action="d10_product.html" method="get" id="formLog" name="formLog">
+            <label for="">email</label>
+            <input type="email" name="email" id="email" required value="admin@gmail.com">
+            <br><br>
+
+            <label for="">password</label>
+            <input type="password" name="password" id="password" required value="123">
+            <br><br>
+
+            <label for="">Remember Password</label>
+            <input type="checkbox" name="remember" id="remember" checked>
+            <br><br>
+
+            <input type="submit" value="submit">
+            <input type="reset" value="reset">
+            <input type="button" value="register member" id="register" name="register">
+        </form>
+    </div>
+
+    <script>
+        //lap trinh cho su kien click button [register]
+        document.getElementById("register").onclick = function () {
+            location.href = 'd10_signon.html';//mo trang sign on
+
+        }
+
+        //lap trinh cho su kien submit form dang nhap [formLog]
+        document.getElementById("formLog").onsubmit = function () {
+            //kiem tra tai khoan da ton tai chua
+            if (localStorage.getItem("mail") == null) {
+                alert("Ban chua tao tai khoan !");
+                return false;
+            }
+            //lay du lieu hien trong o mail
+            var mail = document.getElementById("email").value;
+
+            //lay du lieu trong o password
+            var pass = document.getElementById("password").value;
+
+            //kiem tra mail va pass co giong tai khoan dang ky da luu tru ko
+            var TKmail = localStorage.getItem("mail");
+            var TKpass = localStorage.getItem("password");
+            if(mail!=TKmail){
+                alert( "Tai khoan email ko hop le !!!\nVui long nhap lai.");
+                document.getElementById("email").focus();
+                return false;
+
+            }
+
+            if(pass!=TKpass){
+                alert( "Mat ma ko dung !!!\nVui long nhap lai.");
+                document.getElementById("password").focus();
+                return false;
+
+            }
+
+        }
+    </script>
+</body>
+
+</html>
